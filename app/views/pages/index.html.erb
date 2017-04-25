@@ -1,0 +1,21 @@
+<h1>Pages#index</h1>
+<p>Find me in app/views/pages/index.html.erb</p>
+
+<div id="app">
+  <input v-model="reviews[reviews.length -1].text">
+  <div v-for="review in reviews" v-if="isNice(review.text)">
+    <p>{{ review.text }}</p>
+    <p>{{ review.rating }}</p>
+    <p>{{ review.reviewer }}</p>
+    <button v-on:click="removeReview(review)">delete me</button>
+    <hr>
+  </div>
+
+  <p>Text: <input v-model="newText"></p>
+  <p>Rating: <input v-model="newRating"></p>
+  <p>Reviewer: <input v-model="newReviewer"></p>
+  <button v-on:click="addReview()">Add the review</button>
+</div>
+
+
+<script type="text/javascript"></script>
